@@ -26,16 +26,6 @@ body {
   font-weight: bold;
 }
 
-.btn {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 6px;
-  background: #ffffff;
-  color: #2f6b3a;
-  font-weight: bold;
-  cursor: pointer;
-}
-
 .layout {
   display: flex;
   min-height: calc(100vh - 60px);
@@ -116,6 +106,42 @@ body {
   object-fit: cover;
 }
 
+.plant-card__add {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  color: #555;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.plant-card__favorite {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  color: #c9c2b3;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.plant-card__favorite--active {
+  color: #e0a52c;
+}
+
 .plant-card__caption {
   position: absolute;
   bottom: 12px;
@@ -180,6 +206,109 @@ body {
 
 .plant-card__stat-value--warning {
   color: #b5502f;
+}
+
+.plant-card__add--added {
+  background: #eaf3ea;
+  color: #2f6b3a;
+  cursor: default;
+}
+
+.my-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.mylist-card {
+  background: #fff;
+  border: 1px solid #e6e6e0;
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.mylist-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.mylist-card__title {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.mylist-card__latin {
+  font-style: italic;
+  color: #8a8070;
+  font-size: 13px;
+}
+
+.mylist-card__remove {
+  border: none;
+  background: none;
+  color: #a89f8c;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.mylist-card__remove:hover {
+  color: #b5502f;
+}
+
+.mylist-card__conditions {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: #3a3a3a;
+}
+
+.mylist-card__conditions-label {
+  display: inline-block;
+  min-width: 70px;
+  font-weight: bold;
+  color: #8a6d3b;
+}
+
+.mylist-card__added {
+  font-size: 13px;
+  color: #8a8070;
+  margin: 10px 0 14px;
+}
+
+.mylist-card__field {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #a89f8c;
+  margin-bottom: 12px;
+}
+
+.mylist-card__field textarea,
+.mylist-card__field input {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px 10px;
+  border: 1px solid #e0e0dc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  color: #222;
+  resize: vertical;
 }
 
 .empty-state {

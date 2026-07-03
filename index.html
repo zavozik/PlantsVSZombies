@@ -10,27 +10,36 @@
 
   <header class="topbar">
     <div class="topbar__logo">Помощник по уходу за растениями</div>
-    <nav class="topbar__actions">
-      <button class="btn">Добавить растение</button>
-    </nav>
   </header>
 
   <div class="layout">
 
     <aside class="sidebar">
       <nav class="sidebar__nav">
-        <a href="#" class="sidebar__link sidebar__link--active">Справочник растений</a>
-        <a href="#" class="sidebar__link">Мой список</a>
-        <a href="#" class="sidebar__link">Избранное</a>
-        <a href="#" class="sidebar__link">Напоминания</a>
+        <a href="#" class="sidebar__link sidebar__link--active" data-view="catalog">Справочник растений</a>
+        <a href="#" class="sidebar__link" data-view="mylist">Мой список</a>
+        <a href="#" class="sidebar__link" data-view="favorites">Избранное</a>
       </nav>
     </aside>
 
     <main class="content">
-      <h1>Справочник растений</h1>
-      <div class="plant-grid" id="plant-grid"></div>
-    </section>
-  </main>
+      <section class="view" id="view-catalog">
+        <h1>Справочник растений</h1>
+        <div class="plant-grid" id="plant-grid"></div>
+      </section>
+
+      <section class="view" id="view-mylist" hidden>
+        <h1>Мой список</h1>
+        <div class="my-list" id="my-list"></div>
+      </section>
+
+      <section class="view" id="view-favorites" hidden>
+        <h1>Избранное</h1>
+        <div class="plant-grid" id="favorites-grid"></div>
+      </section>
+    </main>
+
+  </div>
 
   <script src="data.js"></script>
   <script src="script.js"></script>
