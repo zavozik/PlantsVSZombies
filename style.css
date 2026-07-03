@@ -79,3 +79,112 @@ body {
 .content h1 {
   margin-bottom: 12px;
 }
+
+.plant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.plant-card {
+  background: #faf6ee;
+  border: 1px solid #eee2cf;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.plant-card__image {
+  position: relative;
+  height: 180px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #ded2b8,
+    #ded2b8 10px,
+    #e9dfc9 10px,
+    #e9dfc9 20px
+  );
+}
+
+.plant-card__add {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  color: #555;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.plant-card__caption {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #8a8070;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.plant-card__body {
+  padding: 16px 18px 20px;
+}
+
+.plant-card__badge {
+  display: inline-block;
+  background: #efe4cf;
+  color: #8a6d3b;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.plant-card__title {
+  font-size: 22px;
+  margin-bottom: 2px;
+}
+
+.plant-card__latin {
+  font-style: italic;
+  color: #8a8070;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.plant-card__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  border-top: 1px solid #ece3d0;
+  padding-top: 14px;
+}
+
+.plant-card__stat-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #a89f8c;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.plant-card__stat-value {
+  display: block;
+  font-size: 13px;
+  color: #3a3a3a;
+}
+
+.plant-card__stat-value--warning {
+  color: #b5502f;
+}
