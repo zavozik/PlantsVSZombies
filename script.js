@@ -5,13 +5,13 @@ function renderPlantCard(plant) {
   return `
     <article class="plant-card">
       <div class="plant-card__image">
-        <button class="plant-card__add" aria-label="Добавить в список">+</button>
+        ${plant.image ? `<img class="plant-card__photo" src="${plant.image}" alt="${plant.name}" onerror="this.remove()">` : ""}
         <span class="plant-card__caption">фото &middot; ${plant.name}</span>
       </div>
       <div class="plant-card__body">
         <span class="plant-card__badge">${plant.careLevel}</span>
         <h3 class="plant-card__title">${plant.name}</h3>
-        <p class="plant-card__latin">${plant.latinName}</p>
+        <p class="plant-card__description">${plant.description}</p>
         <div class="plant-card__stats">
           <div class="plant-card__stat">
             <span class="plant-card__stat-label">Полив</span>
@@ -31,9 +31,12 @@ function renderPlantCard(plant) {
   `;
 }
 
-function renderPlantGrid(plants) {
-  const grid = document.getElementById("plant-grid");
-  grid.innerHTML = plants.map(renderPlantCard).join("");
+function renderPlantGrid(containerId, plants) {
+  const grid = document.getElementById(containerId);
+  grid.innerHTML = plants.length
+    ? plants.map(renderPlantCard).join("")
+    : `<p class="empty-state">Здесь пока пусто.</p>`;
 }
 
-renderPlantGrid(PLANTS);
+
+renderPlantGrid("plant-grid", PLANTS);

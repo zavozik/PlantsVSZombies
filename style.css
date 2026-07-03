@@ -98,6 +98,7 @@ body {
 .plant-card__image {
   position: relative;
   height: 180px;
+  overflow: hidden;
   background-image: repeating-linear-gradient(
     45deg,
     #ded2b8,
@@ -107,20 +108,12 @@ body {
   );
 }
 
-.plant-card__add {
+.plant-card__photo {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 32px;
-  height: 32px;
-  border: none;
-  border-radius: 50%;
-  background: #fff;
-  color: #555;
-  font-size: 18px;
-  line-height: 1;
-  cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .plant-card__caption {
@@ -154,10 +147,10 @@ body {
   margin-bottom: 2px;
 }
 
-.plant-card__latin {
-  font-style: italic;
-  color: #8a8070;
+.plant-card__description {
+  color: #6d6455;
   font-size: 14px;
+  line-height: 1.4;
   margin-bottom: 16px;
 }
 
@@ -187,4 +180,10 @@ body {
 
 .plant-card__stat-value--warning {
   color: #b5502f;
+}
+
+.empty-state {
+  color: #8a8070;
+  font-size: 14px;
+  margin-top: 20px;
 }
