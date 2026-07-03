@@ -10,6 +10,14 @@
 
   <header class="topbar">
     <div class="topbar__logo">Помощник по уходу за растениями</div>
+    <nav class="topbar__actions">
+      <button class="btn btn--secondary" id="export-plants">Выгрузить JSON</button>
+      <label class="btn btn--secondary" for="import-plants-input">
+        Загрузить JSON
+        <input type="file" id="import-plants-input" accept="application/json,.json" hidden>
+      </label>
+      <button class="btn" id="open-add-plant">Добавить растение</button>
+    </nav>
   </header>
 
   <div class="layout">
@@ -19,6 +27,7 @@
         <a href="#" class="sidebar__link sidebar__link--active" data-view="catalog">Справочник растений</a>
         <a href="#" class="sidebar__link" data-view="mylist">Мой список</a>
         <a href="#" class="sidebar__link" data-view="favorites">Избранное</a>
+        <a href="#" class="sidebar__link" data-view="reminders">Напоминания</a>
       </nav>
     </aside>
 
@@ -37,11 +46,86 @@
         <h1>Избранное</h1>
         <div class="plant-grid" id="favorites-grid"></div>
       </section>
+
+      <section class="view" id="view-reminders" hidden>
+        <h1>Напоминания</h1>
+        <div class="reminder-list" id="reminder-list"></div>
+      </section>
     </main>
 
   </div>
 
-  <script src="data.js"></script>
-  <script src="script.js"></script>
+  <div class="modal-overlay" id="add-plant-modal" hidden>
+    <div class="modal">
+      <div class="modal__header">
+        <h2>Добавить растение в справочник</h2>
+        <button type="button" class="modal__close" id="add-plant-close" aria-label="Закрыть">&times;</button>
+      </div>
+      <form class="modal__form" id="add-plant-form">
+        <label class="modal__field">
+          Название
+          <input type="text" name="name" required placeholder="Например: Драцена">
+        </label>
+        <label class="modal__field">
+          Латинское название
+          <input type="text" name="latinName" placeholder="Dracaena fragrans">
+        </label>
+        <label class="modal__field">
+          Краткое описание
+          <textarea name="description" rows="2" placeholder="Пара предложений о растении"></textarea>
+        </label>
+        <label class="modal__field">
+          Уровень ухода
+          <select name="careLevel">
+            <option>Лёгкий уход</option>
+            <option selected>Средний уход</option>
+            <option>Сложный уход</option>
+          </select>
+        </label>
+        <label class="modal__field">
+          Полив
+          <span class="modal__hint">например: «раз в неделю», «2 раза в неделю», «раз в 2 недели»</span>
+          <input type="text" name="watering" required placeholder="раз в неделю">
+        </label>
+        <label class="modal__field">
+          Свет
+          <input type="text" name="light" required placeholder="яркий рассеянный">
+        </label>
+        <label class="modal__field">
+          Пересадка
+          <span class="modal__hint">например: «раз в год», «раз в 2 года»</span>
+          <input type="text" name="transplant" required placeholder="раз в 2 года">
+        </label>
+        <label class="modal__field modal__field--checkbox">
+          <input type="checkbox" name="toxic">
+          Токсично
+        </label>
+        <label class="modal__field">
+          Особенности ухода (необязательно)
+          <span class="modal__hint">то, что важно знать помимо полива, света и пересадки</span>
+          <textarea name="features" rows="2" placeholder="Например: не любит сквозняков"></textarea>
+        </label>
+        <label class="modal__field">
+          Ссылка на фото (необязательно)
+          <input type="text" name="image" placeholder="images/moe-rastenie.jpg">
+        </label>
+        <div class="modal__actions">
+          <button type="button" class="btn btn--secondary" id="add-plant-cancel">Отмена</button>
+          <button type="submit" class="btn">Добавить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/mylist.js"></script>
+  <script src="js/reminders.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/events.js"></script>
+  <script src="js/add-plant.js"></script>
+  <script src="js/import-export.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

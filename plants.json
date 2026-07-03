@@ -1,0 +1,93 @@
+[
+  {
+    "id": "monstera",
+    "name": "Монстера",
+    "latinName": "Monstera deliciosa",
+    "description": "Лиана с крупными резными листьями, родом из тропических лесов Центральной Америки.",
+    "careLevel": "Средний уход",
+    "watering": "раз в неделю",
+    "light": "яркий рассеянный",
+    "transplant": "раз в 2 года",
+    "toxic": true,
+    "features": "Любит опрыскивание и высокую влажность воздуха; крупные листья стоит периодически протирать от пыли.",
+    "image": "images/monstera.jpg"
+  },
+  {
+    "id": "sansevieria",
+    "name": "Сансевиерия",
+    "latinName": "Dracaena trifasciata",
+    "description": "Жёсткие вертикальные листья, одно из самых неприхотливых комнатных растений.",
+    "careLevel": "Лёгкий уход",
+    "watering": "раз в 2–3 недели",
+    "light": "любое освещение",
+    "transplant": "раз в 3-4 года",
+    "toxic": true,
+    "features": "Устойчива к сухому воздуху и перепадам температуры, легко переносит долгое отсутствие полива.",
+    "image": "images/sansevieria.jpg"
+  },
+  {
+    "id": "zamioculcas",
+    "name": "Замиокулькас",
+    "latinName": "Zamioculcas zamiifolia",
+    "description": "Глянцевые перистые листья, накапливает влагу в клубнях и легко переносит засуху.",
+    "careLevel": "Лёгкий уход",
+    "watering": "раз в 2 недели",
+    "light": "полутень",
+    "transplant": "раз в 2-3 года",
+    "toxic": true,
+    "features": "Не переносит переувлажнения — между поливами почва должна полностью просыхать.",
+    "image": "images/zamioculcas.jpg"
+  },
+  {
+    "id": "chlorophytum",
+    "name": "Хлорофитум",
+    "latinName": "Chlorophytum comosum",
+    "description": "Раскидистые полосатые листья, быстро разрастается и даёт молодые розетки-«детки».",
+    "careLevel": "Лёгкий уход",
+    "watering": "раз в неделю",
+    "light": "рассеянный",
+    "transplant": "раз в год",
+    "toxic": false,
+    "features": "Хорошо очищает воздух и нетребователен к освещению — подходит новичкам.",
+    "image": "images/chlorophytum.jpg"
+  },
+  {
+    "id": "spathiphyllum",
+    "name": "Спатифиллум",
+    "latinName": "Spathiphyllum wallisii",
+    "description": "«Женское счастье»: тёмно-зелёные листья и белые соцветия-покрывала, любит влажность.",
+    "careLevel": "Средний уход",
+    "watering": "2 раза в неделю",
+    "light": "полутень",
+    "transplant": "раз в год",
+    "toxic": true,
+    "features": "Чувствителен к сухому воздуху: при недостатке влаги листья быстро опускаются.",
+    "image": "images/spathiphyllum.jpg"
+  },
+  {
+    "id": "ficus-lyrata",
+    "name": "Фикус Лирата",
+    "latinName": "Ficus lyrata",
+    "description": "Крупные волнистые листья в форме лиры, эффектное деревце для дома.",
+    "careLevel": "Средний уход",
+    "watering": "раз в неделю",
+    "light": "яркий рассеянный",
+    "transplant": "раз в 2 года",
+    "toxic": true,
+    "features": "Не любит частые перестановки и сквозняки — требует стабильного места.",
+    "image": "images/ficus-lyrata.jpg"
+  },
+  {
+    "id": "peperomia",
+    "name": "Пеперомия",
+    "latinName": "Peperomia obtusifolia",
+    "description": "Компактное растение с плотными мясистыми листьями, неприхотливо к уходу.",
+    "careLevel": "Лёгкий уход",
+    "watering": "раз в неделю",
+    "light": "рассеянный",
+    "transplant": "раз в 1-2 года",
+    "toxic": false,
+    "features": "Легко размножается листовыми черенками, устойчива к редкому поливу.",
+    "image": "images/peperomia.jpg"
+  }
+]

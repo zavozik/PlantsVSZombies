@@ -26,6 +26,33 @@ body {
   font-weight: bold;
 }
 
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #2f6b3a;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.btn--secondary {
+  background: #f0f0ec;
+  color: #6d6455;
+}
+
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .layout {
   display: flex;
   min-height: calc(100vh - 60px);
@@ -59,6 +86,30 @@ body {
   color: #2f6b3a;
   font-weight: bold;
   border-left: 3px solid #2f6b3a;
+}
+
+.sidebar__link--alert {
+  position: relative;
+  color: #b5502f;
+  font-weight: bold;
+}
+
+.sidebar__link--alert::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d54a2c;
+  transform: translateY(-50%);
+  animation: sidebar-alert-glow 2s ease-in-out infinite;
+}
+
+@keyframes sidebar-alert-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(213, 74, 44, 0.45); }
+  50% { box-shadow: 0 0 0 4px rgba(213, 74, 44, 0.12); }
 }
 
 .content {
@@ -142,6 +193,26 @@ body {
   color: #e0a52c;
 }
 
+.plant-card__delete {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  color: #b5502f;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.plant-card__delete:hover {
+  background: #fbe9e3;
+}
+
 .plant-card__caption {
   position: absolute;
   bottom: 12px;
@@ -182,10 +253,23 @@ body {
 
 .plant-card__stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   border-top: 1px solid #ece3d0;
   padding-top: 14px;
+}
+
+.plant-card__features {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #ece3d0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #6d6455;
+}
+
+.plant-card__features strong {
+  color: #8a6d3b;
 }
 
 .plant-card__stat-label {
@@ -214,6 +298,7 @@ body {
   cursor: default;
 }
 
+/* Раздел "Мой список" */
 .my-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -315,4 +400,216 @@ body {
   color: #8a8070;
   font-size: 14px;
   margin-top: 20px;
+}
+
+/* Раздел "Напоминания" */
+.reminder-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.reminder-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #e6e6e0;
+  border-radius: 12px;
+  padding: 14px 18px;
+}
+
+.reminder-item--alert {
+  border-color: #e2a893;
+  background: #fdf2ef;
+  animation: reminder-glow 2s ease-in-out infinite;
+}
+
+@keyframes reminder-glow {
+  0%, 100% { box-shadow: 0 0 0 2px rgba(213, 74, 44, 0.12); }
+  50% { box-shadow: 0 0 0 5px rgba(213, 74, 44, 0.28); }
+}
+
+.reminder-item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.reminder-item__title {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.reminder-item__target {
+  font-size: 13px;
+  color: #8a8070;
+}
+
+.reminder-item__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.reminder-item__counter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reminder-item__transplant {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reminder-item__transplant-box {
+  font-size: 13px;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #eaf3ea;
+  color: #2f6b3a;
+}
+
+.reminder-item__transplant-box--due {
+  background: #fbe9e3;
+  color: #b5502f;
+}
+
+.reminder-item__transplant-btn {
+  border: none;
+  border-radius: 8px;
+  background: #2f6b3a;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.reminder-item__transplant-btn:hover {
+  background: #1f4a27;
+}
+
+.reminder-item__count {
+  font-size: 14px;
+  color: #6d6455;
+}
+
+.reminder-item__increment {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: #2f6b3a;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.reminder-item__increment:hover {
+  background: #1f4a27;
+}
+
+/* Модальное окно добавления растения */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 100;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.modal__header h2 {
+  font-size: 18px;
+}
+
+.modal__close {
+  border: none;
+  background: none;
+  font-size: 22px;
+  line-height: 1;
+  color: #a89f8c;
+  cursor: pointer;
+}
+
+.modal__close:hover {
+  color: #b5502f;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #6d6455;
+}
+
+.modal__field input[type="text"],
+.modal__field textarea,
+.modal__field select {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: normal;
+  color: #222;
+  padding: 8px 10px;
+  border: 1px solid #e0e0dc;
+  border-radius: 8px;
+  resize: vertical;
+}
+
+.modal__field--checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal__hint {
+  font-size: 12px;
+  font-weight: normal;
+  color: #a89f8c;
+}
+
+.modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
 }
